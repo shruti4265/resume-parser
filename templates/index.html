@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Parser</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>Resume Parser</header>
+  <main>
+    <input type="file" id="fileInput" multiple accept=".pdf,.docx,.txt,.csv" />
+    <button id="uploadButton" disabled>Upload Resumes</button>
+    <div id="loading" style="display:none;">Processing files, please wait...</div>
+    <pre id="output"></pre>
+    <div class="download-links" style="display:none;">
+      <a id="csvDownload" href="#" download="resume_results.csv" target="_blank">Download CSV</a>
+      <a id="summaryDownload" href="#" download="skills_summary.txt" target="_blank">Download Summary</a>
+    </div>
+    <div id="tableContainer"></div>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
